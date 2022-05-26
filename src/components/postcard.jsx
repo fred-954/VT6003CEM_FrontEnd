@@ -14,16 +14,17 @@ class PostCard extends React.Component {
  
         hoverable={true}
         actions={[
-          <PostIcon type="like" countLink={this.props.links.likes} 
-          handleToggle={this.toggleLike} id={this.props.id}
-/>,
+//          <PostIcon type="like" countLink={this.props.links.likes} 
+//          handleToggle={this.toggleLike} id={this.props.id}
+///>,
+          <PostIcon type="like" />,
           <PostIcon type="message" />,
           <PostIcon type="pushpin" />
         ]}>
         
-        <Meta title={this.props.title} description={this.props.summary} />
+        <Meta title={this.props.dogname} description={this.props.dogtype} />
         <p></p>
-  <Link   to={ `/dashboard/${this.props.id}` }>Details</Link>
+  <Link   to={ `/dashboarddog/${this.props.id}` }>Details</Link>
       </Card>
       
     );

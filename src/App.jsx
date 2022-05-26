@@ -11,9 +11,12 @@ import Account from './components/account';
 import Login from './components/login';
 import Img_Page from './components/img_Page';
 import DogGrid from './components/doggrid';
+import DogSearch from './components/dogSearch';
 import Register from './components/register';
 import UserContext from './contexts/user';
 import {useNavigate } from 'react-router-dom';
+import DashboardDog from './components/dashboarddog';
+import DetailDog from './components/detaildog';
 const { Header, Content, Footer, Button} = Layout;
 
 
@@ -87,6 +90,9 @@ regComplete() {
             <Route path="/account" element={<Account />} />	
             <Route path="/img_Page" element={<Img_Page />} />	
             <Route path="/doggrid" element={<DogGrid />} />	
+            <Route path="/dogsearch" element={<DogSearch />} />
+            <Route path="/dashboarddog/:id" element={<DetailDog />} />
+            <Route path="/dashboarddog" element={<DashboardDog />} />
 				</Routes>			
 				</Content>
 				

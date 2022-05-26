@@ -38,9 +38,10 @@ class DogGrid extends React.Component {
       return (
         <div style={{padding:"10px"}} key={post.id} >
           <Col span={6}>
- 
-            <PostCard {...post} />  
-            
+            {post.id}<br></br>
+            {post.dogtype}<br></br>
+            {post.dogage}<br></br>
+            {post.site}<br></br>
 
           </Col>          
          </div>
