@@ -10,6 +10,7 @@ import DetailArticle from './detailarticle';
 import Account from './components/account';
 import Login from './components/login';
 import Img_Page from './components/img_Page';
+import DogGrid from './components/doggrid';
 import Register from './components/register';
 import UserContext from './contexts/user';
 import {useNavigate } from 'react-router-dom';
@@ -71,7 +72,7 @@ regComplete() {
         <Link to="/">Home</Link>
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/about">About</Link>
-  
+        
           {!context.user.loggedIn&& <Link to="/login">Login</Link>}           {context.user.loggedIn&& <Link to="/account" style={{color:"red",background: "#91d5ff"}} type ="link" > Account: {context.user.username}  </Link>} 
           {!context.user.registerOK&&!context.user.loggedIn&&<Link to="/register">Register</Link>}			      
         </Space>
@@ -85,6 +86,7 @@ regComplete() {
 						<Route path="/about" element={<About />} />	
             <Route path="/account" element={<Account />} />	
             <Route path="/img_Page" element={<Img_Page />} />	
+            <Route path="/doggrid" element={<DogGrid />} />	
 				</Routes>			
 				</Content>
 				
