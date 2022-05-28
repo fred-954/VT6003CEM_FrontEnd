@@ -13,12 +13,12 @@ class BlogGrid extends React.Component {
   }
 
   componentDidMount() {
-  fetch('https://BackEndS.fred954.repl.co/api/v1/articles')
+  fetch('https://BackEndS.fred954.repl.co/api/v1/dogs')
   .then(status)
   .then(json)
   .then(data => {
     this.setState({ posts: data })
- //   console.log("post ", data)
+    console.log("post ", data)
   })
   .catch(err => console.log("Error fetching articles", err));
 

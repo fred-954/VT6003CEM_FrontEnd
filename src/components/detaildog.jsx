@@ -1,58 +1,44 @@
 import React from 'react';
-import { Col, Row } from 'antd';
-import PostCard from './postcard';
-import { status, json } from '/utilities/requestHandlers';
+import articles from '../../data/articles.json';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Button } from 'antd';
+import { RollbackOutlined } from '@ant-design/icons';
 
-class DogGrid extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: [],
-    }
-  }
-
-  componentDidMount() {
-  fetch('https://BackEndS.fred954.repl.co/api/v1/dogs')
-  .then(status)
-  .then(json)
-  .then(data => {
-    this.setState({ posts: data })
-    console.log("post ", data)
-  })
-  .catch(err => console.log("Error fetching articles", err));
-
-
-}
-
-
-
-  render() {
+function DetailDog(props){
+	var { id } = useParams();
+	if(!id)id=1; // set default id=1
+	const navigate = useNavigate();
+  const keys = Object.keys(articles)
+  const values = Object.values(articles)  
+  var match=0; // set matching flag
+    
   
-    if (!this.state.posts.length) {
-      return <h3>Loading posts...</h3>
-    }
-    // the next line does the Array.map() operation on the posts
-    // to create an array of React elements to be rendered
-    const cardList = this.state.posts.map(post => {
-      return (
-        <div style={{padding:"10px"}} key={post.id} >
-          <Col span={6}>
-            {post.id}<br></br>
-            {post.dogtype}<br></br>
-            {post.dogage}<br></br>
-            {post.site}<br></br>
-
-          </Col>          
-         </div>
-      )
-    });
-    return (
-      <Row type="flex" justify="space-around">
-        {cardList}
-      </Row>
-    );
-  }
+/**  
+ 
+for(var i=0; i<values.length;i++){
+   console.log("keys[i] ", keys[i])
+   console.log("values[i] ", values[i])
 }
+console.log("values[0]  keys ", Object.keys(values[0])) 
+  
+*/
+  
+ 
+  
+  
 
-export default DogGrid;
+			return (
+				<>
+					<p>Nothing Found</p>{' '}
+					<Button
+						type="primary"
+						icon={<RollbackOutlined />}
+						onClick={() => navigate(-1)}
+					/>
+				</>
+			);
+			
+}
+export default DetailDog;
+
+
