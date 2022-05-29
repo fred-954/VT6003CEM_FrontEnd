@@ -56,9 +56,9 @@ function handleChange(value) {
    <>
      <Col span={16}>   
         <PageHeader
-            title="Dogs in Dog Charity"
+            title="Dogs in The Canine Shelter"
             subTitle="Here are the dogs in our centres"/>       
-       <Search placeholder="Search Users"
+       <Search placeholder="Search..."
             allowClear
             enterButton="Search"
             size="large"
