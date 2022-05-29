@@ -19,34 +19,33 @@ const onSearch= value => {
   console.log("value ",value)
   console.log("press ",`${press}`)
  let urlPath="https://BackEndS.fred954.repl.co/api/v1/dogs";
- if (press==="email"||press==="username") 
+ if (press==="site"||press==="dogtype") 
    urlPath+=`/search/?fields=${press}&q=${value}`
  else
-  if(press==="username&fields=email"&&value==="")
+  if(press==="dogtype&fields=site"&&value==="")
      urlPath+=`/search/?fields=${press}`
  
   console.log("urlPath ",urlPath)
   return(fetch(`${urlPath}`,{
-        method: "GET",
-        headers:{"Authorization": "Basic " +`${authbasic}`}
+        method: "GET"
   })
   .then(status)
   .then(json)
   .then(data => { 
-   console.log("user return  ",JSON.stringify(data) );
-   console.log("user data  ",data );
+   console.log("dog return  ",JSON.stringify(data) );
+   console.log("dog data  ",data );
    setUsers(data);
    setSearch(true); 
     value="";
   })
-  .catch(err => console.log("Error fetching users", err)) 
+  .catch(err => console.log("Error fetching dogs", err)) 
   ) 
 }
 
 const { Option } = Select;
 
 function handleChange(value) {
-  message.info("Pls. enter at least three characters to search by email or username otherwise leave the input empty")
+  message.info("Pls. enter at least three characters to search by dog type or site")
   
   setPress(value);
   console.log(`selected ${value}`);
@@ -65,10 +64,10 @@ function handleChange(value) {
             size="large"
             onSearch={onSearch}/>
        <Select defaultValue="all" style={{ width: 120 }} onChange={handleChange}>
-        <Option value="username">username</Option>
-        <Option value="email">email</Option>
-        <Option value="username&fields=email">Get all-filter by username & email</Option>
-        <Option value="all">Get all-without filter</Option>
+        <Option value="dogtype">dogtype</Option>
+        <Option value="site">site</Option>
+        <Option value="dogtype&fields=site">Get all-filter by dog type and site</Option>
+        <Option value="all">Get all dog list</Option>
         </Select>	      
   {isSearchOK&&<Table dataSource={usersData}>
    <Column title="ID" dataIndex="id" key="id" />
