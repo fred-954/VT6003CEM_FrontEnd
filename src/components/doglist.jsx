@@ -73,8 +73,6 @@ function handleChange(value) {
   {isSearchOK&&<Table dataSource={usersData}>
    <Column title="ID" dataIndex="id" key="id" />
    <Column title="Dogname" dataIndex="dogname" key="dogname" />
-   <Column title="Dog Type" dataIndex="dogtype" key="dogtype" />
-   <Column title="Dog Age" dataIndex="dogage" key="dogage" />
    <Column title="Site" dataIndex="site" key="site" /> 
    </Table>}
    </Col>  

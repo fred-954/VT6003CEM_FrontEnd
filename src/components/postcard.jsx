@@ -22,8 +22,10 @@ class PostCard extends React.Component {
           <PostIcon type="pushpin" />
         ]}>
         
-        <Meta title={this.props.dogname} description={this.props.dogtype} />
+        <Meta title={this.props.dogname} description={this.props.dogtype}  />
+        <Meta description={this.props.dogsite}  />
         <p></p>
+        
   <Link   to={ `/dashboarddog/${this.props.id}` }>Details</Link>
       </Card>
       

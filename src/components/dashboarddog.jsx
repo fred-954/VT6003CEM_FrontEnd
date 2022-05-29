@@ -8,7 +8,7 @@ function DashboardDog() {
   return (
       
         
-      <DetailDog />
+      <DetailDog/>
      
     
    )

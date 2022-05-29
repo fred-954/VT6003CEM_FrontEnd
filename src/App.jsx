@@ -17,6 +17,7 @@ import UserContext from './contexts/user';
 import {useNavigate } from 'react-router-dom';
 import DashboardDog from './components/dashboarddog';
 import DetailDog from './components/detaildog';
+import DogList from './components/doglist';
 const { Header, Content, Footer, Button} = Layout;
 
 
@@ -93,6 +94,8 @@ regComplete() {
             <Route path="/dogsearch" element={<DogSearch />} />
             <Route path="/dashboarddog/:id" element={<DetailDog />} />
             <Route path="/dashboarddog" element={<DashboardDog />} />
+          <Route path="/doglist" element={<DogList />} />
+          
 				</Routes>			
 				</Content>
 				
