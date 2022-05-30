@@ -45,7 +45,7 @@ const onSearch= value => {
 const { Option } = Select;
 
 function handleChange(value) {
-  message.info("Pls. enter at least three characters to search by dog type or site")
+  message.info("Pls. enter at least one character to search by dog type or gender")
   
   setPress(value);
   console.log(`selected ${value}`);
@@ -66,7 +66,6 @@ function handleChange(value) {
        <Select defaultValue="all" style={{ width: 120 }} onChange={handleChange}>
         <Option value="dogtype">dogtype</Option>
         <Option value="gender">gender</Option>
-        <Option value="dogtype&fields=site">Get all-filter by dog type and site</Option>
         <Option value="all">Get all dog list</Option>
         </Select>	      
   {isSearchOK&&<Table dataSource={usersData}>

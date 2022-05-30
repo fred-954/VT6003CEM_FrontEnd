@@ -103,6 +103,10 @@ render() {
  {
     return (
       <Form {...formItemLayout} name="register" scrollToFirstError onFinish={this.onFinish}>
+
+        <Form.Item name="username" label="Username" rules={usernameRules}>
+            <Input />
+        </Form.Item>
         
         <Form.Item name="email" label="E-mail" rules={emailRules} >
             <Input />
@@ -114,10 +118,6 @@ render() {
 
         <Form.Item name="confirm" label="Confirm Password" rules={confirmRules} >
             <Input.Password />
-        </Form.Item>
-
-        <Form.Item name="username" label="Username">
-            <Input />
         </Form.Item>
 
         <Form.Item name="role" label="Role:">

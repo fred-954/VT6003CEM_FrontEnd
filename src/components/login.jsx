@@ -6,7 +6,7 @@ function Login() {
 
   return (
     <> 
-    <h2 style={{ color: 'green' }}> Welcome to Blog User Login</h2>     
+    <h2 style={{ color: 'green' }}> Welcome login to The Canine Shelter</h2>     
      
       <LoginForm />
      

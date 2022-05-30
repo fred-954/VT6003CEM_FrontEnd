@@ -6,7 +6,7 @@ function About() {
     <> 
     <h2 style={{ color: 'green' }}>About Dogs in the Centre</h2>     
            
-      <Detaildog />
+      
     </>
   )
 }

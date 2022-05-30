@@ -86,8 +86,10 @@ render() {
         </Form.Item>
         <Form.Item name="site" label="Site">
           <Select defaultValue="TM" style={{ width: 120 }} onChange={handleChange}>
-        <Option value="TM">TM</Option>
-        <Option value="ST">ST</Option>
+        <Option value="Tuen Mun">TM</Option>
+        <Option value="Sha Tin">ST</Option>
+        <Option value="Cheung Sha Wan">CSW</Option>
+        <Option value="Chai Wan">CW</Option>
         </Select>
         </Form.Item>
         <Form.Item name="gender" label="Dog">

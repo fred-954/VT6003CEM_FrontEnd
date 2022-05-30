@@ -52,7 +52,7 @@ class AddDogForm extends React.Component {
     .then(data => {
         // For you TODO: display success message and/or redirect
         console.log(data); 
-      alert(`Register Successful`);
+      alert(`Add a new dog Successful`);
         this.context.regComplete(); 
    //     alert(`Registration Completed! Pls. press login or green button to continue `)      
 			  

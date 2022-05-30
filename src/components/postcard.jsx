@@ -26,7 +26,7 @@ class PostCard extends React.Component {
         <Meta description={this.props.dogsite}  />
         <p></p>
         
-  <Link   to={ `/dashboarddog/${this.props.id}` }>Details</Link>
+  <Link   to={ `/dogSearch` }>Details</Link>
       </Card>
       
     );

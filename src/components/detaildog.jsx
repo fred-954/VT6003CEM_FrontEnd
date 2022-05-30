@@ -14,21 +14,15 @@ class DetailDog extends React.Component {
 
   
   
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: [],
-    }
-  }
 
 
 
   render() {
-    console.log(<>{this.props.id}</>);
+    
     return(
         
         //<h1>{this.props.dogname}</h1>
-        <h2><>{this.props.id}</></h2>
+        <h2><>About</></h2>
     )
   }
 
