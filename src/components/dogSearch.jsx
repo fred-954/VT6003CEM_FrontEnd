@@ -19,10 +19,10 @@ const onSearch= value => {
   console.log("value ",value)
   console.log("press ",`${press}`)
  let urlPath="https://BackEndS.fred954.repl.co/api/v1/dogs";
- if (press==="site"||press==="dogtype") 
+ if (press==="gender"||press==="dogtype") 
    urlPath+=`/search/?fields=${press}&q=${value}`
  else
-  if(press==="dogtype&fields=site"&&value==="")
+  if(press==="dogtype&fields=gender"&&value==="")
      urlPath+=`/search/?fields=${press}`
  
   console.log("urlPath ",urlPath)
@@ -65,7 +65,7 @@ function handleChange(value) {
             onSearch={onSearch}/>
        <Select defaultValue="all" style={{ width: 120 }} onChange={handleChange}>
         <Option value="dogtype">dogtype</Option>
-        <Option value="site">site</Option>
+        <Option value="gender">gender</Option>
         <Option value="dogtype&fields=site">Get all-filter by dog type and site</Option>
         <Option value="all">Get all dog list</Option>
         </Select>	      
@@ -74,6 +74,7 @@ function handleChange(value) {
    <Column title="Dogname" dataIndex="dogname" key="dogname" />
    <Column title="Dog Type" dataIndex="dogtype" key="dogtype" />
    <Column title="Dog Age" dataIndex="dogage" key="dogage" />
+    <Column title="Gender" dataIndex="gender" key="gender" /> 
    <Column title="Site" dataIndex="site" key="site" /> 
    </Table>}
    </Col>  
