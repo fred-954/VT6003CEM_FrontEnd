@@ -4,6 +4,8 @@ import { status, json } from '/utilities/requestHandlers';
 import  GoHomeButton  from './goHome';
 import UserContext from '../contexts/user';
 
+const  { Search } = Input;
+
 const formItemLayout = {
   labelCol: { xs: { span: 24 }, sm: { span: 6 } },
   wrapperCol: { xs: { span: 24 }, sm: { span: 12 } }
@@ -17,9 +19,14 @@ function handleChange(value) {
   console.log(`selected ${value}`);
 }
 
+
+
 class RemoveDogForm extends React.Component {
- 
+
+  
+  
   constructor(props) {
+    
     super(props);
     this.state = {
       selected: props.selected   
@@ -33,77 +40,31 @@ class RemoveDogForm extends React.Component {
   
   onFinish = (values) => { 
   console.log('Received values of form: ', values);
-  const {confirm,...data } = values;  // ignore the 'confirm' value
-    console.log("Json  ",JSON.stringify(data))
-    fetch('https://BackEndS.fred954.repl.co/api/v1/dogs', {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }        
-    })
+ let urlPath="https://BackEndS.fred954.repl.co/api/v1/dogs";
+   urlPath+=`/delete/${values}`
+  console.log("urlPath ",urlPath)
+    alert(`Dog id with ${values} is removed`);
+  fetch(`${urlPath}`,{
+        method: "GET"
+  })
     .then(status)
-    .then(json)
-    .then(data => {
-        // For you TODO: display success message and/or redirect
-        console.log(data);  
-          this.context.regComplete(); 
-   //     alert(`Registration Completed! Pls. press login or green button to continue `)      
-			  
-    })
     .catch(errorResponse => {
         // For you TODO: show nicely formatted error message and clear form
 	 console.error(errorResponse);
         alert(`Error: ${errorResponse}`);
     });  
   }
-    
-
+  
 
 render() {
   return (
-      <Form {...formItemLayout} name="register" scrollToFirstError onFinish={this.onFinish}>
-        
-        <Form.Item name="dogname" label="Dog Name">
-            <Input />
-        </Form.Item>
-        <Form.Item name="dogtype" label="Dog type">
-          <Select defaultValue="Unknown" style={{ width: 120 }} onChange={handleChange}>
-        <Option value="Unknown">Unknown</Option>
-        <Option value="Golden Retriever">Golden Retriever</Option>
-        <Option value="Shiba Inu">Shiba Inu</Option>
-        <Option value="Welsh Corgi">Welsh Corgi</Option>
-        <Option value="Poodle">Poodle</Option>
-        <Option value="Tang Dog">Tang Dog</Option>
-        <Option value="Pomeranian">Pomeranian</Option>
-        <Option value="Huskey">Huskey</Option>
-        </Select>
-        </Form.Item>
-        <Form.Item name="dogage" label="Dog Age">
-            <Input />
-        </Form.Item>
-        <Form.Item name="site" label="Site">
-          <Select defaultValue="TM" style={{ width: 120 }} onChange={handleChange}>
-        <Option value="TM">TM</Option>
-        <Option value="ST">ST</Option>
-        </Select>
-        </Form.Item>
-        <Form.Item name="gender" label="Dog">
-        <Select defaultValue="male" style={{ width: 120 }} onChange={handleChange}>
-        <Option value="Male">male</Option>
-        <Option value="Female">female</Option>
-        </Select>
-        </Form.Item>
-
-
-        <Form.Item {...tailFormItemLayout}>
-            <Button type="primary" htmlType="submit"  >
-                Register
-            </Button>
+      <Search placeholder="Enter ID to Delete"
+            allowClear
+            enterButton="Remove"
+            size="large"
+            onSearch={this.onFinish}/>
       
-        </Form.Item>
-      </Form>
-    );
+  );
     
   };
 

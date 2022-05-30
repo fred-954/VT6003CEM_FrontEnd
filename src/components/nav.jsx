@@ -37,6 +37,8 @@ function Nav(props) {
         </Menu.Item>
         <Menu.Item key="7" type="primary"  >{user.loggedIn&&<Link to="/UpdateDog">Update New dog</Link>}
         </Menu.Item>
+         <Menu.Item key="8" type="primary"  ><Link to="/RemoveDog">Delete dog</Link>
+        </Menu.Item>
         </Menu>  
    </>
       )}
