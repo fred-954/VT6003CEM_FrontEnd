@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {  useContext, useState } from 'react';
 import { Form, Input, Button, Select } from 'antd';
 import { status, json } from '/utilities/requestHandlers';
 import  GoHomeButton  from './goHome';
@@ -13,11 +13,14 @@ const tailFormItemLayout = {
 };
 
 function handleChange(value) {
-  setPress(value);
-  console.log(`selected ${value}`);
-}
+    const [press, setPress] = useState("");
+    setPress(value);
+    console.log(`selected ${value}`);
+  }
 
 class AddDogForm extends React.Component {
+
+
  
   constructor(props) {
     super(props);
@@ -29,6 +32,8 @@ class AddDogForm extends React.Component {
    }
    
   static contextType = UserContext; 
+
+
   
   
   onFinish = (values) => { 
@@ -46,7 +51,8 @@ class AddDogForm extends React.Component {
     .then(json)
     .then(data => {
         // For you TODO: display success message and/or redirect
-        console.log(data);  
+        console.log(data); 
+      alert(`Register Successful`);
         this.context.regComplete(); 
    //     alert(`Registration Completed! Pls. press login or green button to continue `)      
 			  
@@ -84,8 +90,10 @@ render() {
         </Form.Item>
         <Form.Item name="site" label="Site">
           <Select defaultValue="TM" style={{ width: 120 }} onChange={handleChange}>
-        <Option value="TM">TM</Option>
-        <Option value="ST">ST</Option>
+        <Option value="Tuen Mun">TM</Option>
+        <Option value="Sha Tin">ST</Option>
+        <Option value="Cheung Sha Wan">CSW</Option>
+        <Option value="Chai Wan">CW</Option>
         </Select>
         </Form.Item>
         <Form.Item name="gender" label="Dog">

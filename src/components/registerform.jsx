@@ -1,8 +1,13 @@
 import React from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Select } from 'antd';
 import { status, json } from '/utilities/requestHandlers';
 import  GoHomeButton  from './goHome';
 import UserContext from '../contexts/user';
+
+function handleChange(value) {
+  setPress(value);
+  console.log(`selected ${value}`);
+}
 
 const formItemLayout = {
   labelCol: { xs: { span: 24 }, sm: { span: 6 } },
@@ -115,8 +120,11 @@ render() {
             <Input />
         </Form.Item>
 
-        <Form.Item name="role" label="Worker Code">
-            <Input />
+        <Form.Item name="role" label="Role:">
+          <Select defaultValue="user" style={{ width: 120 }} onChange={handleChange}>
+        <Option value="user">User</Option>
+        <Option value="admin">Charity Worker</Option>
+        </Select>
         </Form.Item>
 
         <Form.Item {...tailFormItemLayout}>

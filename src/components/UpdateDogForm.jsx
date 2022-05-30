@@ -63,7 +63,9 @@ class UpdateDogForm extends React.Component {
 render() {
   return (
       <Form {...formItemLayout} name="register" scrollToFirstError onFinish={this.onFinish}>
-        
+        <Form.Item name="id" label="ID">
+            <Input />
+        </Form.Item>
         <Form.Item name="dogname" label="Dog Name">
             <Input />
         </Form.Item>

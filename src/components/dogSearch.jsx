@@ -75,7 +75,7 @@ function handleChange(value) {
    <Column title="Dog Type" dataIndex="dogtype" key="dogtype" />
    <Column title="Dog Age" dataIndex="dogage" key="dogage" />
     <Column title="Gender" dataIndex="gender" key="gender" /> 
-   <Column title="Site" dataIndex="site" key="site" /> 
+   <Column title="Shelter Location" dataIndex="site" key="site" /> 
    </Table>}
    </Col>  
 
