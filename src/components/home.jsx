@@ -1,6 +1,5 @@
 import React from 'react';
 import '../App.css';
-import Article from '../articles'
 import DogGrid from './doggrid'
 
 

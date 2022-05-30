@@ -5,8 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/home';
 import Nav from './components/nav';
 import About from './components/about';
-import Dashboard from './components/dashboard';
-import DetailArticle from './detailarticle';
+
 import Account from './components/account';
 import Login from './components/login';
 import Img_Page from './components/img_Page';
@@ -17,7 +16,12 @@ import UserContext from './contexts/user';
 import {useNavigate } from 'react-router-dom';
 import DashboardDog from './components/dashboarddog';
 import DetailDog from './components/detaildog';
-import UpdateDog from './components/updateDog';
+import UpdateDog from './components/UpdateDog';
+import UpdateDogForm from './components/UpdateDogForm';
+import RemoveDog from './components/RemoveDog';
+import RemoveDogForm from './components/RemoveDogForm';
+import AddDog from './components/AddDog';
+import AddDogForm from './components/AddDogForm';
 const { Header, Content, Footer, Button} = Layout;
 
 
@@ -84,8 +88,7 @@ regComplete() {
 				<Routes>
 						<Route exact path="/" element={<Home />} />
             <Route exact path="/register" element={<Register />} />
-						<Route path="/dashboard/:id" element={<DetailArticle />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+						
             <Route path="/login"element={<Login />} />
 						<Route path="/about" element={<About />} />	
             <Route path="/account" element={<Account />} />	
@@ -94,7 +97,12 @@ regComplete() {
             <Route path="/dogsearch" element={<DogSearch />} />
             <Route path="/dashboarddog/:id" element={<DetailDog />} />
             <Route path="/dashboarddog" element={<DashboardDog />} />
-          <Route path="/updateDog" element={<UpdateDog />} />
+          <Route path="/UpdateDog" element={<UpdateDog />} />
+          <Route path="/UpdateDogForm" element={<UpdateDogForm />} />
+          <Route path="/AddDog" element={<AddDog />} />
+          <Route path="/AddDogForm" element={<AddDogForm />} />
+          <Route path="/RemoveDog" element={<RemoveDog />} />
+          <Route path="/RemoveDogForm" element={<RemoveDogForm />} />
           
 				</Routes>			
 				</Content>

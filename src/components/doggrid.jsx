@@ -30,7 +30,7 @@ class DogGrid extends React.Component {
   render() {
   
     if (!this.state.posts.length) {
-      return <h3>Loading posts...</h3>
+      return <h3>Loading dog data...</h3>
     }
     // the next line does the Array.map() operation on the posts
     // to create an array of React elements to be rendered

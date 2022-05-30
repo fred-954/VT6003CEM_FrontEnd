@@ -31,9 +31,11 @@ function Nav(props) {
         <Menu.Item key="2" >Dog<Link to="/doggrid"></Link></Menu.Item>
         <Menu.Item key="3" >Dog Search<Link to="/dogSearch"></Link></Menu.Item>
         <Menu.Item key="4" onClick={logout} type="primary"  >{user.loggedIn&&<Link to="/">Logout</Link>}
-        </Menu.Item><Menu.Item key="5" onClick={logout} type="primary"  >{user.loggedIn&&<Link to="/img_Page">UploadImage</Link>}
-        </Menu.Item><Menu.Item key="6" onClick={logout} type="primary"  >{user.loggedIn&&<Link to="/updateDogs">Update New dog</Link>}
-      
+        </Menu.Item><Menu.Item key="5" type="primary"  >{user.loggedIn&&<Link to="/img_Page">UploadImage</Link>}
+        </Menu.Item>
+        <Menu.Item key="6"type="primary"  >{user.loggedIn&&<Link to="/AddDog">Add New dog</Link>}
+        </Menu.Item>
+        <Menu.Item key="7" type="primary"  >{user.loggedIn&&<Link to="/UpdateDog">Update New dog</Link>}
         </Menu.Item>
         </Menu>  
    </>

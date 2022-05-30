@@ -13,13 +13,11 @@ const tailFormItemLayout = {
 };
 
 function handleChange(value) {
-  message.info("Pls. enter at least three characters to search by email or username otherwise leave the input empty")
-  
   setPress(value);
   console.log(`selected ${value}`);
 }
 
-class UpdateDog extends React.Component {
+class AddDogForm extends React.Component {
  
   constructor(props) {
     super(props);
@@ -49,7 +47,7 @@ class UpdateDog extends React.Component {
     .then(data => {
         // For you TODO: display success message and/or redirect
         console.log(data);  
-          this.context.regComplete(); 
+        this.context.regComplete(); 
    //     alert(`Registration Completed! Pls. press login or green button to continue `)      
 			  
     })
@@ -63,34 +61,43 @@ class UpdateDog extends React.Component {
 
 
 render() {
-    return (
+  return (
       <Form {...formItemLayout} name="register" scrollToFirstError onFinish={this.onFinish}>
         
         <Form.Item name="dogname" label="Dog Name">
             <Input />
         </Form.Item>
         <Form.Item name="dogtype" label="Dog type">
-            <Input />
+          <Select defaultValue="Unknown" style={{ width: 120 }} onChange={handleChange}>
+        <Option value="Unknown">Unknown</Option>
+        <Option value="Golden Retriever">Golden Retriever</Option>
+        <Option value="Shiba Inu">Shiba Inu</Option>
+        <Option value="Welsh Corgi">Welsh Corgi</Option>
+        <Option value="Poodle">Poodle</Option>
+        <Option value="Tang Dog">Tang Dog</Option>
+        <Option value="Pomeranian">Pomeranian</Option>
+        <Option value="Huskey">Huskey</Option>
+        </Select>
         </Form.Item>
         <Form.Item name="dogage" label="Dog Age">
             <Input />
         </Form.Item>
         <Form.Item name="site" label="Site">
-          <Select defaultValue="male" style={{ width: 120 }} onChange={handleChange}>
-        <Option value="male">male</Option>
-        <Option value="female">female</Option>
+          <Select defaultValue="TM" style={{ width: 120 }} onChange={handleChange}>
+        <Option value="TM">TM</Option>
+        <Option value="ST">ST</Option>
         </Select>
         </Form.Item>
         <Form.Item name="gender" label="Dog">
         <Select defaultValue="male" style={{ width: 120 }} onChange={handleChange}>
-        <Option value="male">male</Option>
-        <Option value="female">female</Option>
+        <Option value="Male">male</Option>
+        <Option value="Female">female</Option>
         </Select>
         </Form.Item>
 
 
         <Form.Item {...tailFormItemLayout}>
-            <Button type="primary" htmlType="submit"  >
+            <Button htmlType="submit"  >
                 Register
             </Button>
       
@@ -104,4 +111,4 @@ render() {
 
 }
 
-export default UpdateDog;
+export default AddDogForm;
